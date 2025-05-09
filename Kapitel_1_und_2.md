@@ -1,5 +1,3 @@
-Kapitel_1_und_2.md
-
 ## Einleitung
 - Das erste Zeichen der Ausgabe von `ls -l` gibt an, um was es sich handelt (z.B. "d" für Ordner oder "-" für Datei)
 - Cmd+K = Strg+L unter Linux
