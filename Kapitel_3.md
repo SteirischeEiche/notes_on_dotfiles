@@ -37,5 +37,26 @@
 - Für das Klonen haben wir SSH verwendet
 - Gits Magie findet im `git`-Ordner statt; dort werden u.a. die Snapshots unseres Codes gespeichert
 - Regelmäßig `git status` eingeben und die Hinweise lesen
-
 - Eine Datei muss im Repo sein, damit Git sie verfolgen kann, aber `zshrc` muss in `~` sein, die Lösung...
+
+### Symlinks
+- Mit Symlinks kann man Kopien von Dateien an verschiedenen Orten haben; ein Link zeigt auf das Original
+- Symlinks = symbolische Links, das Gegenteil sind Hardlinks
+- Der Name der Originaldatei und des Symlinks müssen nicht übereinstimmen
+- Verwende beim Erstellen von Symlinks absolute Pfade, sonst kann es zu Problemen kommen
+- Man kann das Symlinken automatisieren mit...
+
+## Dotbot
+- Dotbot muss nicht wie andere Programme installiert werden
+- Wir fügen Dotbot als Submodul zu unserem Repo hinzu (gemäß der offiziellen Anleitung)
+
+### Dotbot einstellen
+- Mit Directives kannst du festlegen, was passieren soll, wenn Dotbot ausgeführt wird
+- Die Directives stehen in der `.yaml`-Datei
+
+#### Was die Directives machen
+- `link`: Dotbot erstellt Symlinks
+- `create`: Leere Verzeichnisse werden erstellt
+- `shell`: Befehle, die ausgeführt werden, wenn Dotbot läuft (z.B. um die Standard-Shell zu ändern)
+- `clean`: Löscht automatisch tote (ins Leere zeigende) Symlinks
+- `defaults`: Globale Voreinstellungen für andere Directives (um Wiederholungen zu vermeiden)
