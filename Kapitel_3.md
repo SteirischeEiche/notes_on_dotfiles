@@ -60,3 +60,32 @@
 - `shell`: Befehle, die ausgeführt werden, wenn Dotbot läuft (z.B. um die Standard-Shell zu ändern)
 - `clean`: Löscht automatisch tote (ins Leere zeigende) Symlinks
 - `defaults`: Globale Voreinstellungen für andere Directives (um Wiederholungen zu vermeiden)
+
+### Symlinks mit Dotbot
+- Bei Links kann man explizit angeben, woher eine Datei kommt:
+```yaml
+- link:
+    ~/.zshrc: zshrc
+```
+- Oder implizit:
+```yaml
+- link:
+    ~/.zshrc:
+```
+- Wenn Sie keinen Quellpfad angeben, nimmt Dotbot den Dateinamen des Ziels als Quelle (und ignoriert den führenden Punkt)
+- ==Achtung: Sei vorsichtig, was du in dein GitHub-Repository hochlädst! Das ganze Internet kann es sehen (z.B. SSH-Schlüssel).==
+
+### Shell-Skripte mit Dotbot
+- Ein Shell-Skript ist eine Textdatei, die eine Reihe von Befehlen enthält, so als würdest du sie selbst nacheinander eintippen
+- Bevor du ein Skript ausführen kannst, musst du es ausführbar machen
+- `#!/usr/bin/env zsh` bedeutet: Führe dieses Skript mit der Shell ZSH aus
+- Dotbot kann nicht nur Befehle, sondern auch Skripte ausführen
+- Standardmäßig sind `stdin`, `stdout` und `stderr` in Dotbot deaktiviert. D.h. die Ausgabe und Fehlermeldung der Befehle werden nicht angezeigt und du kannst nichts eingeben
+- Wenn du eine Eingabe und/oder Ausgabe haben willst, musst du sie mit der
+erweiterten Syntax aktivieren:
+```yaml
+- shell:
+      command: ./test.zsh
+      stdout: true
+      stderr: true
+```
