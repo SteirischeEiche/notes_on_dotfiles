@@ -24,10 +24,6 @@
 - Du kannst Homebrew nicht installieren, wenn dein Benutzer kein (ein leeres) Passwort hat
 - Das Homebrew-Installationsskript installiert `xcode-select`, wenn du es noch nicht hast
 
-## Füge `/opt/homebrew/` zum Pfad hinzu
-- `$PATH` ist eine Shell-Umgebungsvariable
-- Der Befehl `shell eval` führt die Befehle aus, die er in der Datei `shellenv` unter `/opt/homebrew/bin/brew/` findet
-
 ## Unterschiede zwischen ZSH-Konfigurationsdateien
 ### Arten von Shell-Sessions (Sitzungen)
 - Wenn du die Terminal- App öffnest, ist das eine _interaktive_ _login_ Shell- Session
@@ -57,3 +53,26 @@
 - Hier sollten z.B. Aliase erstellt und der Prompt konfiguriert werden
 - Man könnte `$PATH` auch hier setzen
 - Es ist jedoch Konvention, `zshrc` nur zu benutzen, um das Aussehen der Shell einzustellen
+
+... wegen der Homebrew-Variable `$PATH` s. unten
+- `zshrc`und `zprofile` werden von Skripten nicht gelesen
+
+## `/opt/homebrew/` zum Pfad hinzufügen
+- `$PATH` ist eine Shell-Umgebungsvariable
+- Der Homebrew-Installer zeigt am Ende, wie man `$PATH` und andere Umgebungsvariablen für Homebrew setzt
+- Man soll einen `zprofile` erstellen, die einen Befehl enthält, der die Umgebungsvariablen setzt:
+- Der Befehl `shell eval` führt die Befehle aus, die er in der Datei `shellv` unter `/opt/homebrew/bin/brew/` findet
+
+---
+
+- Wenn die Installation beendet ist, sollte man `brew doctor` ausführen, um zu überprüfen, ob alles gut gelaufen ist
+- Mit `brew deps` kann man Abhängigkeiten einsehen
+- Man sollte Homebrew aktualisieren, bevor man ein Paket installiert (ein Update kann Minuten dauern)
+- Es gibt oft tägliche Updates für Homebrew (die Homebrew Kernpakete)
+- __Lies immer die Hinweise unter `Ceveat`!__
+
+- Man mit Homebrew _nicht eine bestimmte Version_ eines Pakets installieren (nur die neueste)
+
+---
+
+- Den Homebrew-Artikel auf mac.install.guide weiter lesen
