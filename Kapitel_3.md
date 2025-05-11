@@ -73,7 +73,7 @@
     ~/.zshrc:
 ```
 - Wenn Sie keinen Quellpfad angeben, nimmt Dotbot den Dateinamen des Ziels als Quelle (und ignoriert den führenden Punkt)
-- ==Achtung: Sei vorsichtig, was du in dein GitHub-Repository hochlädst! Das ganze Internet kann es sehen (z.B. SSH-Schlüssel).==
+- ___Achtung: Sei vorsichtig, was du in dein GitHub-Repository hochlädst! Das ganze Internet kann es sehen (z.B. SSH-Schlüssel).___
 
 ### Shell-Skripte mit Dotbot
 - Ein Shell-Skript ist eine Textdatei, die eine Reihe von Befehlen enthält, so als würdest du sie selbst nacheinander eintippen
